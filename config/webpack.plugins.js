@@ -26,7 +26,6 @@ const plugins = [
     new CleanWebpackPlugin([dirBuild], {
         root: process.cwd()
     }),
-    new ExtractTextPlugin('/build/css/[name]' + (env.isProduction ? '.[contenthash]' : '') + '.css'),
     new WebpackOnBuildPlugin(function(stats) {
         const date = new Date();
         console.log(colors.cyan.bold(date.toLocaleTimeString()));

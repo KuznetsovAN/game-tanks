@@ -11,9 +11,16 @@
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
-    "morgan": "~1.9.0"
+    "less": "^3.0.1",
+    "morgan": "~1.9.0",
+    "style": "0.0.3"
   },
   "devDependencies": {
     "webpack-cli": "^2.0.13"
-  }
+  },
+  "main": "app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

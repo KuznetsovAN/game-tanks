@@ -15,7 +15,7 @@ module.exports = {
     context: path.join(__dirname, '/src/game-visual/entry'),
     entry: entries,
     output: {
-        path:  path.join(__dirname, '/src/game-visual/'),
+        path:   path.join(__dirname, '/build/'),
         filename: 'js/[name].js',
         library: '[name]',
         publicPath:  path.join(__dirname, '/build/')
