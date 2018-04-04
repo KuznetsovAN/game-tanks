@@ -1,5 +1,5 @@
 'use strict';
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const env = require('./webpack.environment.js');
 const autoprefixer = require('autoprefixer');
 const cssMqpacker = require('css-mqpacker');
@@ -13,7 +13,7 @@ module.exports = [
         use: [{
             loader: 'babel-loader',
             options: {
-                presets: [ 'es2015','es2016']
+                presets: [ 'env']
             },
         }],
     },
@@ -38,33 +38,35 @@ module.exports = [
     },
     {
         test: /\.less/,
-        loader : ExtractTextPlugin.extract({
-            fallback: 'style',
-            use: [
-                {
-                    loader: 'css',
-                },
-                {
-                    loader: 'postcss',
-                    options: {
-                        plugins: () => [
-                            autoprefixer({
-                                browsers: ['last 3 versions']
-                            }),
-                            cssMqpacker({
-                                sort: true
-                            })
-                        ]
-                    }
-                },
-                {
-                    loader: 'less',
-                    options: {
-                        compress: env.isProduction
-                    }
-                }
-            ]
-        })
+        use: [MiniCssExtractPlugin.loader, "css-loader|less"]
+
+        // loader : ExtractTextPlugin.extract({
+        //     fallback: 'style',
+        //     use: [
+        //         {
+        //             loader: 'css',
+        //         },
+        //         {
+        //             loader: 'postcss',
+        //             options: {
+        //                 plugins: () => [
+        //                     autoprefixer({
+        //                         browsers: ['last 3 versions']
+        //                     }),
+        //                     cssMqpacker({
+        //                         sort: true
+        //                     })
+        //                 ]
+        //             }
+        //         },
+        //         {
+        //             loader: 'less',
+        //             options: {
+        //                 compress: env.isProduction
+        //             }
+        //         }
+        //     ]
+        // })
     },
     {
         test: /\.(ttf|eot|woff)$/,

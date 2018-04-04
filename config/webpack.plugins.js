@@ -1,6 +1,6 @@
 'use strict';
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const AssetsPlugin = require('assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WebpackOnBuildPlugin = require('on-build-webpack');
@@ -29,6 +29,11 @@ const plugins = [
     new WebpackOnBuildPlugin(function(stats) {
         const date = new Date();
         console.log(colors.cyan.bold(date.toLocaleTimeString()));
+    }),
+
+    new MiniCssExtractPlugin({
+        filename: "[name].css",
+        chunkFilename: "[id].css"
     })
 ];
 
