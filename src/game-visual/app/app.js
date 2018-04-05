@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', function(){
             message: 'Hello, Singree!'
         },
         methods:{
+            clickButton: function(val){
+                // $socket is socket.io-client instance
+                this.$socket.emit('emit_method', val);
+            }
 
         }
     });
