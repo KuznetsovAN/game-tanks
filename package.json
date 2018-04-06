@@ -16,7 +16,9 @@
     "socket.io": "^2.1.0",
     "style-loader": "^0.20.3",
     "vue": "^2.5.16",
+    "vue-loader": "^14.2.2",
     "vue-socket.io": "^2.1.1-b",
+    "vue-template-compiler": "^2.5.16",
     "webpack": "^4.5.0"
   },
   "devDependencies": {
