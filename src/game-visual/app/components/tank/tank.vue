@@ -1,29 +1,79 @@
 <template>
-    <svg x="14.4" y="30.2" transform="rotate(45)">
-        <rect x="0.4" y="20.2" style="fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;" width="40" height="59.3"/>
-        <ellipse style="fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;" cx="20.4" cy="53.6" rx="11" ry="10.7"/>
-        <rect x="16.3" y="0.6" style="fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;" width="8.7" height="61.9"/>
-    </svg>
+
+  <div class="tank" v-bind:style="tankStyle()">
+        <div class="tank__tower" v-bind:style="trunkStyle()" >
+            <div class="tank__trunk"></div> 
+  
+        </div>
+  </div>
+     
 </template>
 
 <script>
     export default {
         name: "tank",
-        props:[],
+        props:['model'],
         data() {
             return {
-
+              
             }
         },
         methods: {
+          tankStyle(){
+            let top = this.model.top+"px; ";
+            let left = this.model.left+"px; ";
+                             
+            let turn = "transform: rotate("+this.model.turn+"deg);";
+         
+            return top+left+turn; 
+          }, 
+          
+          trunkStyle(){
+            let turn = "transform: rotate("+this.model.turn_tower+"deg);";         
+            return turn;
+            
+          }
+          
+        
 
         },
         created: function () {
-
+          
         }
-    }
+    } 
 </script>
 
 <style scoped>
+
+.tank{
+    width:40px;
+    height:50px;
+    background-color:blue;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.tank__tower{ 
+  background-color: brown;
+  width: 20px;
+  height: 20px;
+  position: relative;
+} 
+
+.tank__trunk{
+  background-color: brown;
+  position:absolute;
+  width: 10px;
+  height: 30px;
+  top:-30px; 
+  left: 5px;
+  
+}
+
+
 
 </style>

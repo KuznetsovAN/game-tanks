@@ -1,7 +1,19 @@
+
+let CGame = require('./src/game-server/game');
+const game = new CGame();
+
 var server = require('http').createServer();
 var io = require('socket.io')(server);
-io.on('connection', function(client){
+io.on('connection', function (client) {
+    io.emit('init', "new");
     client.on('emit_method', function(data){ console.log(data)});
-    client.on('disconnect', function(){console.log(2)});
+   
+    client.on('emit_tower_left', function (data) {
+        console.log(data)
+       
+    });
+
+    
+    
 });
-server.listen(3000);
+server.listen(3000); 

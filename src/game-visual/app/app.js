@@ -15,23 +15,77 @@ document.addEventListener('DOMContentLoaded', function(){
             connect: function(){
                 console.log('socket connected')
             },
-            customEmit: function(val){
-                console.log('this method was fired by the socket server. eg: io.emit("customEmit", data)')
+            init: function(val){
+                console.log(val);
             }
         },
         data: {
-            message: 'Hello, Singree!'
+            tanks: [
+                {
+                    x: 10,
+                    y: 10,
+                    turn: 10,
+                    turn_tower: 10,
+                    shot:false
+                }
+            ]
+
         },
         methods:{
-            clickButton: function(val){
+            //clickButton: function(val){
                 // $socket is socket.io-client instance
-                this.$socket.emit('emit_method', val);
-            }
+              //  this.$socket.emit('emit_method', val);
+           // }
+
+           
+
+        
+
+
 
         }, components: {
             // <my-component> будет доступен только в шаблоне родителя
             'tank': tank
+        },
+        created: function () {
+            document.addEventListener("keydown", e => {
+                switch (e.keyCode) {
+                    //движение башней
+                    case 37:  // поворот в влево
+                        this.$socket.emit('emit_tower_left', true);
+                        break;
+                    case 39:   // поворот на вправо
+                        this.$socket.emit('emit_tower_riht', true);
+                        break;
+
+
+                    //движение танка 
+                    case 87:   //ехать вперед
+                        this.$socket.emit('emit_tank_top', true);
+                        break;
+                    case 83:   //ехать назад
+                        this.$socket.emit('emit_tank_bottom', true);
+                        break;
+                    case 68:   //поворот вправо
+                        this.$socket.emit('emit_tank_left', true);
+                        break;
+                    case 65:   //поворот влево
+                        this.$socket.emit('emit_tank_right', true);
+                        break;
+
+                    case 32:   //выстрел
+                        this.$socket.emit('emit_tank_shot', true); 
+                        break;
+
+
+
+
+                }
+
+            });
         }
+
+                
     });
 
 });

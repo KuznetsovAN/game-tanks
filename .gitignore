@@ -1,3 +1,11 @@
 .idea
 node_modules
 /build/
+/game-tanks/
+/obj/
+/bin/
+game-tanks.njsproj
+.vs
+game-tanks.njsproj
+game-tanks1.njsproj
+game-tanks1.sln
