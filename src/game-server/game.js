@@ -3,8 +3,12 @@ module.exports =  class CGame{
 
     constructor() {
         this.tanks = [];
-
-
+        for (let i=0;i<4;i++){
+            let tankItem = new tank();
+            tankItem.x = Math.floor(Math.random() * (400 - 0 + 1)) + 0;
+            tankItem.y = Math.floor(Math.random() * (400 - 0 + 1)) + 0;
+            this.tanks.push(tankItem);
+        }
     }
 
     init(count) {

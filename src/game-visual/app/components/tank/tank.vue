@@ -20,12 +20,12 @@
         },
         methods: {
           tankStyle(){
-            let top = this.model.top+"px; ";
-            let left = this.model.left+"px; ";
+            let top = "top:"+this.model.x+"px; ";
+            let left = "left:"+this.model.y+"px; ";
                              
             let turn = "transform: rotate("+this.model.turn+"deg);";
-         
-            return top+left+turn; 
+
+            return top+left+turn;
           }, 
           
           trunkStyle(){

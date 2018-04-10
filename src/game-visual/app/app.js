@@ -16,19 +16,11 @@ document.addEventListener('DOMContentLoaded', function(){
                 console.log('socket connected')
             },
             init: function(val){
-                console.log(val);
+                this.tanks = val;
             }
         },
         data: {
-            tanks: [
-                {
-                    x: 10,
-                    y: 10,
-                    turn: 10,
-                    turn_tower: 10,
-                    shot:false
-                }
-            ]
+            tanks: []
 
         },
         methods:{
@@ -76,10 +68,6 @@ document.addEventListener('DOMContentLoaded', function(){
                     case 32:   //выстрел
                         this.$socket.emit('emit_tank_shot', true); 
                         break;
-
-
-
-
                 }
 
             });

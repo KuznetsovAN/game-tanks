@@ -7,7 +7,7 @@
 <body>
 <div class="game-window">
    
-        <tank :model="tanks[0]"></tank>
+        <tank v-for="tank in tanks" :model="tank"></tank>
 </div>
 <script src="/build/game.js" type="text/javascript"></script>
 </body>
