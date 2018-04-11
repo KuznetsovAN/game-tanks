@@ -16,7 +16,23 @@ module.exports =  class CGame{
         for (let i = 0; i < count; i++) {
             this.tanks.push(new tank());
         }
+    }
+
+    findTank(id){
+        for (let i = 0; i < this.tanks.length; i++) {
+            if(this.tanks[i].id == id) return i;
+        }
+        return null;
+    }
+
+    eventPlayer(event,data){
 
     }
+
+    tics(){
+
+    }
+
+
 
 }

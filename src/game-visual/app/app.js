@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function(){
         },
         data: {
             tanks: []
-
         },
         methods:{
             //clickButton: function(val){

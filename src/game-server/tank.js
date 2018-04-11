@@ -7,5 +7,19 @@ module.exports = class tank {
         this.turn = 0;
         this.turn_tower = 0;
         this.shot = false;
+        this.health = 0; //жизни
+
+
+        this.speed = 1;
+        this.speedTurnTower = 1;
     }
+
+    setShot(x,y){
+        return true;
+    }
+    towerLeft(){
+        this.turn_tower =  this.turn_tower -  1*this.speedTurnTower;
+    }
+
+
 }

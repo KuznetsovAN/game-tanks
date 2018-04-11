@@ -9,10 +9,22 @@ io.on('connection', function (client) {
     client.on('emit_method', function(data){ console.log(data)});
    
     client.on('emit_tower_left', function (data) {
+
         console.log(data)
     });
 
     
     
 });
-server.listen(3000); 
+server.listen(3000);
+
+//цикл игры
+while(true){
+
+    game.tics();
+    io.emit('updade', game.tanks);
+
+
+}
+
+
