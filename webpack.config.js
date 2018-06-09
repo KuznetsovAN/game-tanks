@@ -9,7 +9,7 @@ const extractLess = new ExtractTextPlugin({
 module.exports = {
     entry: {
 
-       game: "./src/game-visual/entry/game"
+        game: "./src/game-visual/entry/game"
     },
     output: {
         // options related to how webpack emits results
@@ -43,10 +43,10 @@ module.exports = {
             {
                 test: /\.js?$/,
                 include: [
-                   // path.resolve(__dirname, "src/game-visual")
+                    // path.resolve(__dirname, "src/game-visual")
                 ],
                 exclude: [
-                   // path.resolve(__dirname, "/node_modules/")
+                    // path.resolve(__dirname, "/node_modules/")
                 ],
                 // these are matching conditions, each accepting a regular expression or string
                 // test and include have the same behavior, both must be matched
@@ -124,7 +124,7 @@ module.exports = {
             { resource: [ /* conditions */ ] },
             // matches if any condition is matched (default for arrays)
 
-            { resource: { not: []/* condition */ } }
+            { resource: { not: [] /* condition */ } }
             // matches if the condition is not matched
         ],
 
@@ -195,7 +195,7 @@ module.exports = {
         proxy: { // proxy URLs to backend development server
             '/api': 'http://localhost:3000'
         },
-        contentBase: path.join(__dirname, 'public'), // boolean | string | array, static file location
+        contentBase: path.join(__dirname, '/'), // boolean | string | array, static file location
         compress: true, // enable gzip compression
         historyApiFallback: true, // true for index.html upon 404, object for multiple paths
         hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
