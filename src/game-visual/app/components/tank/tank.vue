@@ -30,12 +30,8 @@
           
           trunkStyle(){
             let turn = "transform: rotate("+this.model.turn_tower+"deg);";         
-            return turn;
-            
-          }
-          
-        
-
+            return turn;            
+          } 
         },
         created: function () {
           

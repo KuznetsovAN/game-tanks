@@ -1,6 +1,7 @@
 import './app.less';
 //import Vue  from 'vue';
 
+
 import Vue from '../../../node_modules/vue/dist/vue.js'; //'../../node_modules/vue/dist/vue.js';
 import VueSocketio from 'vue-socket.io';
 import tank from './components/tank/tank.vue';

@@ -7,24 +7,37 @@ process.send({
 });
 
 process.on('message', (msg) => {
-
-
     if (msg.type == 'init') {
-
-    }
-});
-
-while (true) {
-
-    if (i % 100000 == 0) {
         process.send({
             type: 'updade',
             data: game.tanks
         });
+    } else if (msg.type == 'emit_tower_left') {
+        game.tanks[0].towerLeft();
+    } else if (msg.type == 'emit_tower_riht') {
+        game.tanks[0].towerRight();
+
+    } else if (msg.type == 'emit_tank_left') {
+        console.log(1);
+        game.tanks[0].turnLeft();
+    } else if (msg.type == 'emit_tank_right') {
+        console.log(2);
+        game.tanks[0].turnRight();
     }
 
-    //  process.send({ a: i });
+});
 
-    i++;
-    // console.log(1);
-}
+
+
+
+var lastUpdateTime = (new Date()).getTime();
+setInterval(function() {
+
+    process.send({
+        type: 'updade',
+        data: game.tanks
+    });
+
+    var currentTime = (new Date()).getTime();
+    lastUpdateTime = currentTime;
+}, 1000 / 60);
