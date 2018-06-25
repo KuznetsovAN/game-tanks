@@ -35,6 +35,15 @@ module.exports = class tank {
         this.turn = this.turn + 1 * this.speedTurn;
     }
 
+    forward() {
+        let turn = this.turn * (Math.PI / 180);
+        this.x = this.x + this.speed * Math.cos(turn);
+        this.y = this.y + this.speed * Math.sin(turn);
+    }
 
-
+    backward() {
+        let turn = (this.turn - 180) * (Math.PI / 180);
+        this.x = this.x + this.speed * Math.cos(turn);
+        this.y = this.y + this.speed * Math.sin(turn);
+    }
 }

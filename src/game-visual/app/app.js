@@ -62,10 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         //движение танка 
                     case 87: //ехать вперед
-                        this.$socket.emit('emit_tank_top', true);
+                        this.$socket.emit('emit_forward', true);
                         break;
                     case 83: //ехать назад
-                        this.$socket.emit('emit_tank_bottom', true);
+                        this.$socket.emit('emit_backward', true);
                         break;
                     case 68: //поворот вправо
                         this.$socket.emit('emit_tank_left', true);

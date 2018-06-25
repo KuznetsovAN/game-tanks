@@ -18,11 +18,17 @@ process.on('message', (msg) => {
         game.tanks[0].towerRight();
 
     } else if (msg.type == 'emit_tank_left') {
-        console.log(1);
+        //console.log(1);
         game.tanks[0].turnLeft();
     } else if (msg.type == 'emit_tank_right') {
-        console.log(2);
+        //console.log(2);
         game.tanks[0].turnRight();
+    } else if (msg.type == 'emit_forward') {
+        //console.log(2);
+        game.tanks[0].forward();
+    } else if (msg.type == 'emit_backward') {
+        //console.log(2);
+        game.tanks[0].backward();
     }
 
 });

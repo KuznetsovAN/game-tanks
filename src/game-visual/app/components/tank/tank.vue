@@ -20,10 +20,10 @@
         },
         methods: {
           tankStyle(){
-            let top = "top:"+this.model.x+"px; ";
-            let left = "left:"+this.model.y+"px; ";
+            let top = "top:"+(this.model.y+200-25)+"px; "; 
+            let left = "left:"+(this.model.x+200-20)+"px; ";   
                              
-            let turn = "transform: rotate("+this.model.turn+"deg);";
+            let turn = "transform: rotate("+(this.model.turn+90)+"deg);"; 
 
             return top+left+turn;
           }, 

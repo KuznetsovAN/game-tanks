@@ -27,6 +27,13 @@ io.on('connection', function(client) {
         forked.send({ type: 'emit_tank_right' });
     });
 
+    client.on('emit_forward', function(data) {
+        forked.send({ type: 'emit_forward' });
+    });
+    client.on('emit_backward', function(data) {
+        forked.send({ type: 'emit_backward' });
+    });
+
 
 
     client.on('init', function(data) {
@@ -34,8 +41,6 @@ io.on('connection', function(client) {
         forked.send({ type: 'init' });
         // game.tanks[0].towerLeft();
         //io.emit('updade', game.tanks);
-
-
     });
 
 
